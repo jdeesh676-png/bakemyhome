@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bake My Home UI</title>
+
+<style>
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4')
+    no-repeat center/cover;
+  min-height: 100vh;
+}
+
+/* ---------- Header Wrapper ---------- */
+.header-wrapper {
+  width: 100%;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Left Section ---------- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.email {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.logo img {
+  width: 120px;
+}
+
+/* ---------- Search Box ---------- */
+.search-box {
+  margin-top: 10px;
+  width: 58%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  transition: 0.25s ease-in-out;
+}
+
+.search-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 14px;
+}
+
+.search-icon {
+  font-size: 18px;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #0c6dfd;
+}
+
+/* underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #0c6dfd;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- DROPDOWN ---------- */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 12px;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 6px 10px;
+}
+
+/* ---------- Right Section ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.account-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.contact-btn {
+  padding: 10px 22px;
+  border-radius: 40px;
+  border: none;
+  background: #047bff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(4, 123, 255, 0.4);
+}
+
+/* ---------- Intro Title ---------- */
+.hero-title {
+  margin-top: 90px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  animation: fadeUp .8s ease;
+}
+
+/* smooth enter animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header-wrapper">
+
+  <div class="header-left">
+    <span class="icon">✉</span>
+    <span class="email">HomeBakerIndia@gmail.com</span>
+  </div>
+
+  <div class="logo">
+    <img src="https://i.ibb.co/5x0cCgz/logo-sample.png" alt="Logo">
+  </div>
+
+  <div class="header-right">
+    <div class="account-btn">👤 My Account</div>
+    <button class="contact-btn">CONTACT US</button>
+  </div>
+
+</header>
+
+<div class="search-box">
+  <input type="text" placeholder="Search By Shop Name Or City">
+  <span class="search-icon">🔍</span>
+</div>
+
+<nav>
+  <a href="#">Home</a>
+
+  <a href="#">Shop</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+  <a href="#">Login</a>
+</nav>
+
+<h1 class="hero-title">Bake My Home In Chennai</h1>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("locationMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
