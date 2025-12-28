@@ -8,292 +8,199 @@
 <style>
 
 body{
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  background:url("https://images.unsplash.com/photo-1614707267537-400d1d5a1a17")
-  center/cover no-repeat;
-  min-height:100vh;
+ margin:0;
+ font-family:"Poppins",sans-serif;
+ background:#051622;
+ color:#fff;
 }
 
-/* ==============================
-   GRADIENT GLASS HEADER
-================================*/
+/* ===========================
+ HEADER
+===========================*/
 .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 28px;
-  background:linear-gradient(145deg,#ffd5e5aa,#ffffff66);
-  backdrop-filter:blur(16px);
-  border-bottom:2px solid #ff8ebd;
-  box-shadow:0 20px 40px rgba(0,0,0,.25);
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:14px 26px;
+ background:linear-gradient(145deg,#0f2635,#071821);
+ border-bottom:1px solid #1ef2ff44;
+ box-shadow:0 12px 30px rgba(0,0,0,.45);
 }
 
-/* Logo */
-.logo-wrap{
-  position:absolute;
-  top:55px;
-  left:50%;
-  transform:translateX(-50%);
-}
-.logo-wrap img{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #ffb4d9;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
+.actions button{
+ background:#00e5ff;
+ border:none;
+ padding:10px 22px;
+ border-radius:40px;
+ font-weight:700;
+ cursor:pointer;
+ color:#00131a;
 }
 
-/* Header Right */
-.actions{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  font-weight:600;
-}
-
-.contact-btn{
-  padding:10px 22px;
-  border-radius:40px;
-  border:none;
-  background:#ff5fa6;
-  color:#fff;
-  cursor:pointer;
-  transition:.25s;
-}
-.contact-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(255,95,166,.45);
-}
-
-/* ==============================
-   SEARCH BAR
-================================*/
-.search-box{
-  margin:150px auto 0;
-  width:60%;
-  display:flex;
-  align-items:center;
-  padding:12px 18px;
-  border-radius:40px;
-  background:rgba(255,255,255,.7);
-  border:1px solid #ffe1ef;
-  backdrop-filter:blur(12px);
-  box-shadow:0 20px 35px rgba(0,0,0,.25);
-}
-.search-box input{
-  width:100%;
-  border:none;
-  outline:none;
-  background:transparent;
-  font-size:14px;
-}
-
-/* ==============================
-   NAVIGATION
-================================*/
-nav{
-  margin-top:22px;
-  display:flex;
-  justify-content:center;
-  gap:32px;
-  font-weight:600;
-}
-nav a{
-  text-decoration:none;
-  color:#111;
-  position:relative;
-}
-nav a:hover{color:#ff3f8b;}
-nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0%;
-  height:2px;
-  background:#ff3f8b;
-  transition:.3s;
-}
-nav a:hover::after{width:100%;}
-
-/* ==============================
-   HERO TITLE
-================================*/
-.hero-title{
-  margin-top:35px;
-  text-align:center;
-  color:#fff;
-  font-size:46px;
-  font-weight:900;
-  text-shadow:0 8px 30px rgba(0,0,0,.7);
-  animation:fadeUp .9s ease;
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(25px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* ==============================
-   FROSTING DIVIDER
-================================*/
-.frost-divider{
-  width:100%;
-  height:18px;
-  background:
-   repeating-linear-gradient(
-     -45deg,
-     #ffb4d9 0 12px,
-     #ffe3f2 12px 24px
-   );
-  animation:drip 6s linear infinite;
-}
-@keyframes drip{
-  from{background-position:0 0;}
-  to{background-position:200px 0;}
-}
-
-/* ==============================
-   ABOUT SECTION
-================================*/
-.about{
-  text-align:center;
-  padding:40px 18%;
-  background:#fff7fb;
-  font-weight:600;
-  line-height:1.6;
-  color:#553344;
-}
-
-/* ==============================
-   BAKERY CARD GRID
-================================*/
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-  padding:40px 8%;
-}
-
-.card{
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(8px);
-  border-radius:18px;
-  box-shadow:0 20px 30px rgba(0,0,0,.22);
-  overflow:hidden;
-  transition:.25s;
-}
-.card:hover{transform:translateY(-6px);}
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-.card .info{
-  padding:12px;
-  font-weight:600;
-}
-
-/* ==============================
-   CONTACT POPUP — GLASS + NEON
-================================*/
+/* ===========================
+ SUCCESS POPUP (NEW)
+===========================*/
 .popup-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.6);
+ display:none;
+ justify-content:center;
+ align-items:center;
+ z-index:999;
 }
 
+.success-box{
+ width:360px;
+ padding:22px;
+ text-align:center;
+ border-radius:18px;
+ background:linear-gradient(145deg,#081e2b,#0d2d3f);
+ border:1px solid #19ffd6;
+ box-shadow:
+  0 20px 40px rgba(0,0,0,.6),
+  0 0 20px #0ff;
+ animation:pop .4s ease;
+}
+@keyframes pop{
+ from{transform:scale(.8);opacity:0;}
+ to{transform:scale(1);opacity:1;}
+}
+
+.success-box .tick{
+ font-size:48px;
+ color:#30ffa7;
+}
+
+.success-box button{
+ margin-top:12px;
+ padding:10px 20px;
+ border-radius:14px;
+ border:none;
+ background:#00e5ff;
+ font-weight:700;
+ cursor:pointer;
+}
+
+/* ===========================
+ CONTACT FORM POPUP (NEW)
+===========================*/
 .popup{
-  width:380px;
-  background:linear-gradient(145deg,#ffffff40,#ffd6eb40);
-  backdrop-filter:blur(18px);
-  border-radius:22px;
-  padding:20px;
-  border:1.5px solid rgba(255,255,255,.6);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.45),
-    0 0 18px #ff72c1,
-    inset 0 0 12px #ffa3dd;
-  animation:fadeUp .45s ease;
+ width:360px;
+ padding:18px;
+ background:linear-gradient(145deg,#0b2230,#0e2f43);
+ border-radius:18px;
+ border:1px solid #19ffd6;
+ box-shadow:0 20px 40px rgba(0,0,0,.6);
+ animation:pop .4s ease;
 }
 
-.popup h3{
-  margin-top:0;
-  color:#c2186b;
-  text-align:center;
-  font-weight:800;
+.popup label{
+ font-weight:700;
 }
-
 .popup input,
 .popup textarea{
-  width:100%;
-  margin-top:10px;
-  padding:10px;
-  border-radius:14px;
-  border:1px solid #ffcbe9;
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(6px);
-  outline:none;
-  font-size:13px;
-  box-shadow:inset 0 0 12px rgba(0,0,0,.08);
+ width:100%;
+ margin-top:6px;
+ padding:10px;
+ border-radius:12px;
+ border:none;
+ background:#112f45;
+ color:#fff;
 }
-.popup textarea{min-height:80px;}
+.popup-buttons button{
+ width:100%;
+ margin-top:10px;
+ padding:12px;
+ border-radius:14px;
+ border:none;
+ font-weight:800;
+ cursor:pointer;
+}
+.wbtn{background:#1fd366;}
+.ebtn{background:#00e5ff;}
 
-.whatsapp-btn{
-  width:100%;
-  margin-top:14px;
-  padding:12px;
-  border-radius:40px;
-  border:none;
-  background:linear-gradient(135deg,#1dd067,#66ff9a);
-  color:#fff;
-  font-weight:800;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-  transition:.25s;
+/* ===========================
+ CATEGORY FILTER
+===========================*/
+.filter-bar{
+ display:flex;
+ gap:12px;
+ justify-content:center;
+ padding:14px;
 }
-.whatsapp-btn:hover{
-  transform:translateY(-2px) scale(1.02);
-  box-shadow:0 18px 35px rgba(0,0,0,.45);
+.filter-btn{
+ padding:10px 18px;
+ border-radius:20px;
+ border:1px solid #32ffe2;
+ background:#082635;
+ cursor:pointer;
 }
-
-.close-btn{
-  float:right;
-  cursor:pointer;
-  color:#ff2b84;
-  font-size:16px;
-  font-weight:900;
-}
-
-/* ==============================
-   SUCCESS POPUP — GLASS NEON
-================================*/
-.success-box{
-  display:none;
-  width:360px;
-  text-align:center;
-  padding:28px 18px;
-  background:linear-gradient(145deg,#ffffff50,#ffe3ff40);
-  border-radius:22px;
-  border:1.5px solid rgba(255,255,255,.7);
-  backdrop-filter:blur(18px);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.45),
-    0 0 25px #7bffb3,
-    inset 0 0 12px #a8ffd9;
-  font-weight:900;
-  color:#0a8f42;
-  animation:successPop .45s ease;
+.filter-btn.active{
+ background:#00ffd1;
+ color:#002024;
 }
 
-@keyframes successPop{
-  from{transform:scale(.8);opacity:0;}
-  to{transform:scale(1);opacity:1;}
+/* ===========================
+ PRODUCT CARDS + ANIMATIONS
+===========================*/
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:18px;
+ padding:24px;
+}
+.card{
+ background:linear-gradient(145deg,#0b2332,#0d3143);
+ border-radius:18px;
+ border:1px solid #1ef2ff55;
+ box-shadow:0 12px 30px rgba(0,0,0,.55);
+ overflow:hidden;
+ transform:translateY(20px);
+ opacity:0;
+}
+.card.show{animation:fadeUp .6s forwards;}
+
+@keyframes fadeUp{
+ to{transform:translateY(0);opacity:1;}
+}
+
+.card img{
+ width:100%;
+ height:160px;
+ object-fit:cover;
+}
+.card .info{
+ padding:12px;
+ font-weight:700;
+}
+
+.order-btn{
+ width:100%;
+ border:none;
+ padding:10px;
+ background:#00e5ff;
+ font-weight:800;
+ cursor:pointer;
+}
+
+/* ===========================
+ PRODUCT MODAL
+===========================*/
+.modal{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.65);
+ display:none;
+ justify-content:center;
+ align-items:center;
+}
+.modal-content{
+ width:340px;
+ border-radius:16px;
+ background:#0c2a3b;
+ border:1px solid #12ffd8;
+ padding:16px;
 }
 
 </style>
@@ -301,125 +208,175 @@ nav a:hover::after{width:100%;}
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-  <div>✉ HomeBakerIndia@gmail.com</div>
-  <div class="actions">
-    <button class="contact-btn" onclick="openPopup()">CONTACT US</button>
-  </div>
+ <div>✉ BakeTimeStories@gmail.com</div>
+ <div class="actions">
+   <button onclick="openContact()">CONTACT</button>
+   <button onclick="alert('Login popup will be added next build')">LOGIN</button>
+ </div>
 </div>
 
-<!-- LOGO -->
-<div class="logo-wrap">
-  <img src="blob:https://onedrive.live.com/537094ae-46d2-42d1-a2d9-30aacf87db29.png" alt="BakeTimeStories Logo">
+<!-- CATEGORY FILTER -->
+<div class="filter-bar">
+ <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+ <button class="filter-btn" onclick="filterCategory('cakes')">Cakes</button>
+ <button class="filter-btn" onclick="filterCategory('brownies')">Brownies</button>
+ <button class="filter-btn" onclick="filterCategory('hampers')">Hampers</button>
 </div>
 
-<!-- SEARCH -->
-<div class="search-box">
-  <input placeholder="Search By Cake or Brownies or Hampers">
-  🔍
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="#">Home</a>
-  <a href="#">Shop</a>
-  <a href="#">About</a>
-  <a href="#" onclick="openPopup()">Contact</a>
-  <a href="#">Login</a>
-</nav>
-
-<h1 class="hero-title">Bake My Home In Chennai</h1>
-
-<div class="frost-divider"></div>
-
-<!-- ABOUT -->
-<div class="about">
-  Rooted in Chennai, our luxury home bakery is dedicated to crafting fresh, eggless desserts — blending fine ingredients, elegant design, and indulgent flavors in every cake, brownie, and chocolate.
-</div>
-
-<div class="frost-divider"></div>
-
+<!-- PRODUCT GRID -->
 <!-- BAKERY CARD GRID -->
-<div class="grid">
-  <div class="card">
+<div class="grid" id="productGrid">
+
+  <!-- CAKES -->
+  <div class="card cakes">
     <img src="https://images.pexels.com/photos/35389962/pexels-photo-35389962.jpeg">
     <div class="info">Chocolate Truffle Cake</div>
+    <button class="order-btn" onclick="openProduct('Chocolate Truffle Cake')">View</button>
   </div>
 
-  <div class="card">
+  <div class="card cakes">
     <img src="https://images.pexels.com/photos/5702989/pexels-photo-5702989.jpeg">
     <div class="info">Eggless Cupcakes</div>
+    <button class="order-btn" onclick="openProduct('Eggless Cupcakes')">View</button>
   </div>
 
-  <div class="card">
+  <!-- BROWNIES -->
+  <div class="card brownies">
     <img src="https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg">
     <div class="info">Brownies & Tarts</div>
+    <button class="order-btn" onclick="openProduct('Brownies & Tarts')">View</button>
   </div>
 
-  <div class="card">
+  <!-- HAMPERS -->
+  <div class="card hampers">
     <img src="https://images.pexels.com/photos/30727980/pexels-photo-30727980.jpeg">
     <div class="info">Gift Hampers</div>
+    <button class="order-btn" onclick="openProduct('Gift Hampers')">View</button>
   </div>
+
 </div>
 
+
 <!-- CONTACT POPUP -->
-<div class="popup-overlay" id="popup">
+<div class="popup-overlay" id="contactPopup">
 
-  <!-- FORM -->
-  <div class="popup" id="formBox">
-    <span class="close-btn" onclick="closePopup()">✖</span>
+ <div class="popup" id="contactBox">
 
-    <h3>Contact & Order</h3>
-
-    <input id="name" placeholder="Your Name">
-    <input id="mobile" placeholder="Mobile Number">
-    <textarea id="req" placeholder="Cake Requirement (size, flavour, message)"></textarea>
-
-    <button class="whatsapp-btn" onclick="submitForm()">
-      Submit via WhatsApp
-    </button>
+  <div style="text-align:right;">
+    <span onclick="closePopups()" style="cursor:pointer;">✖</span>
   </div>
 
-  <!-- SUCCESS POPUP -->
-  <div class="success-box" id="successBox">
-    🎉 Order Request Sent Successfully <br><br>
-    We will contact you shortly on WhatsApp 💬
+  <h3>Contact Us</h3>
+
+  <label>Name :</label>
+  <input id="name">
+
+  <label>Mobile Number :</label>
+  <input id="mobile">
+
+  <label>Requirement :</label>
+  <textarea id="req"></textarea>
+
+  <div class="popup-buttons">
+    <button class="wbtn" onclick="submitWhatsApp()">WhatsApp Submit</button>
+    <button class="ebtn" onclick="saveToSheet()">Email Submit</button>
   </div>
 
+ </div>
+
+ <!-- SUCCESS POPUP -->
+ <div class="success-box" id="successBox">
+  <div class="tick">✔</div>
+
+  <h2>Thank You</h2>
+  We have received your request.<br>
+  We will contact you soon.
+
+  <button onclick="closePopups()">Close</button>
+ </div>
+
+</div>
+
+<!-- PRODUCT PREVIEW MODAL -->
+<div class="modal" id="productModal">
+ <div class="modal-content" id="modalContent">
+   Loading...
+ </div>
 </div>
 
 <script>
 
-function openPopup(){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("formBox").style.display="block";
-  document.getElementById("successBox").style.display="none";
+/* Scroll Fade Animation */
+document.querySelectorAll(".card").forEach((c,i)=>{
+ setTimeout(()=>c.classList.add("show"),i*120);
+});
+
+/* Category Filter */
+function filterCategory(cat){
+ document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+ event.target.classList.add("active");
+
+ document.querySelectorAll(".card").forEach(c=>{
+   c.style.display = (cat==="all" || c.classList.contains(cat)) ? "block":"none";
+ });
 }
 
-function closePopup(){
-  document.getElementById("popup").style.display="none";
+/* Contact Popup */
+function openContact(){
+ document.getElementById("contactPopup").style.display="flex";
+}
+function closePopups(){
+ document.getElementById("contactPopup").style.display="none";
+ document.getElementById("successBox").style.display="none";
 }
 
-function submitForm(){
+/* Product Modal */
+function openProduct(name){
+ document.getElementById("productModal").style.display="flex";
+ document.getElementById("modalContent").innerHTML =
+ `<h3>${name}</h3>
+ <p>Premium handcrafted bakery item.</p>
+ <button onclick="openContact()">Order Now</button>`;
+}
 
-  let name = document.getElementById("name").value;
-  let mobile = document.getElementById("mobile").value;
-  let req = document.getElementById("req").value;
+/* WhatsApp Submit */
+function submitWhatsApp(){
 
-  let message =
-  `New Cake Enquiry%0A
-Name: ${name}%0A
-Mobile: ${mobile}%0A
-Requirement: ${req}`;
+ let n = name.value;
+ let m = mobile.value;
+ let r = req.value;
 
-  window.open(
-    `https://wa.me/919000000000?text=${message}`,
-    "_blank"
-  );
+ window.open(
+  `https://wa.me/919000000000?text=
+Name: ${n}%0AMobile:${m}%0ARequirement:${r}`,
+ "_blank");
 
-  document.getElementById("formBox").style.display="none";
-  document.getElementById("successBox").style.display="block";
+ showSuccess();
+}
+
+/* Save To Google Sheets */
+function saveToSheet(){
+
+ // Replace with your Apps Script URL
+ const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+
+ fetch(scriptURL,{
+  method:"POST",
+  body:new FormData(Object.assign(document.createElement("form"),{
+   name:name.value,
+   mobile:mobile.value,
+   requirement:req.value
+  }))
+ });
+
+ showSuccess();
+}
+
+/* Show Success Popup */
+function showSuccess(){
+ document.getElementById("contactBox").style.display="none";
+ document.getElementById("successBox").style.display="block";
 }
 
 </script>
