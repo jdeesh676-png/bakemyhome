@@ -10,151 +10,82 @@
 body{
  margin:0;
  font-family:"Poppins",sans-serif;
- background:#051622;
- color:#fff;
+ background:linear-gradient(180deg,#ffe6f0,#fff6fc,#fff);
+ color:#4a2c3a;
 }
 
 /* ===========================
- HEADER
+ HEADER — PASTEL GLASS
 ===========================*/
 .header{
  display:flex;
  justify-content:space-between;
  align-items:center;
  padding:14px 26px;
- background:linear-gradient(145deg,#0f2635,#071821);
- border-bottom:1px solid #1ef2ff44;
- box-shadow:0 12px 30px rgba(0,0,0,.45);
+ background:linear-gradient(145deg,#ffdae9b5,#ffffffaa);
+ backdrop-filter:blur(14px);
+ border-bottom:2px solid #ffc1dc;
+ box-shadow:0 18px 35px rgba(0,0,0,.18);
 }
 
 .actions button{
- background:#00e5ff;
+ background:#ff7eb6;
  border:none;
  padding:10px 22px;
  border-radius:40px;
  font-weight:700;
  cursor:pointer;
- color:#00131a;
+ color:white;
+ transition:.25s;
+}
+.actions button:hover{
+ transform:translateY(-2px);
+ box-shadow:0 10px 22px rgba(255,126,182,.45);
 }
 
 /* ===========================
- SUCCESS POPUP (NEW)
-===========================*/
-.popup-overlay{
- position:fixed;
- inset:0;
- background:rgba(0,0,0,.6);
- display:none;
- justify-content:center;
- align-items:center;
- z-index:999;
-}
-
-.success-box{
- width:360px;
- padding:22px;
- text-align:center;
- border-radius:18px;
- background:linear-gradient(145deg,#081e2b,#0d2d3f);
- border:1px solid #19ffd6;
- box-shadow:
-  0 20px 40px rgba(0,0,0,.6),
-  0 0 20px #0ff;
- animation:pop .4s ease;
-}
-@keyframes pop{
- from{transform:scale(.8);opacity:0;}
- to{transform:scale(1);opacity:1;}
-}
-
-.success-box .tick{
- font-size:48px;
- color:#30ffa7;
-}
-
-.success-box button{
- margin-top:12px;
- padding:10px 20px;
- border-radius:14px;
- border:none;
- background:#00e5ff;
- font-weight:700;
- cursor:pointer;
-}
-
-/* ===========================
- CONTACT FORM POPUP (NEW)
-===========================*/
-.popup{
- width:360px;
- padding:18px;
- background:linear-gradient(145deg,#0b2230,#0e2f43);
- border-radius:18px;
- border:1px solid #19ffd6;
- box-shadow:0 20px 40px rgba(0,0,0,.6);
- animation:pop .4s ease;
-}
-
-.popup label{
- font-weight:700;
-}
-.popup input,
-.popup textarea{
- width:100%;
- margin-top:6px;
- padding:10px;
- border-radius:12px;
- border:none;
- background:#112f45;
- color:#fff;
-}
-.popup-buttons button{
- width:100%;
- margin-top:10px;
- padding:12px;
- border-radius:14px;
- border:none;
- font-weight:800;
- cursor:pointer;
-}
-.wbtn{background:#1fd366;}
-.ebtn{background:#00e5ff;}
-
-/* ===========================
- CATEGORY FILTER
+ CATEGORY FILTER — SOFT TAGS
 ===========================*/
 .filter-bar{
  display:flex;
  gap:12px;
  justify-content:center;
- padding:14px;
+ padding:18px;
 }
+
 .filter-btn{
  padding:10px 18px;
  border-radius:20px;
- border:1px solid #32ffe2;
- background:#082635;
+ border:1px solid #ffb6d8;
+ background:#fff3f9;
  cursor:pointer;
+ font-weight:600;
+ color:#8c3f60;
+ transition:.25s;
+}
+.filter-btn:hover{
+ background:#ffd8ec;
 }
 .filter-btn.active{
- background:#00ffd1;
- color:#002024;
+ background:#ff7eb6;
+ color:#fff;
 }
 
 /* ===========================
- PRODUCT CARDS + ANIMATIONS
+ PRODUCT CARDS — BAKERY GLASS
 ===========================*/
 .grid{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
- gap:18px;
- padding:24px;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:22px;
+ padding:28px 26px;
 }
+
 .card{
- background:linear-gradient(145deg,#0b2332,#0d3143);
- border-radius:18px;
- border:1px solid #1ef2ff55;
- box-shadow:0 12px 30px rgba(0,0,0,.55);
+ background:linear-gradient(145deg,#ffffffdd,#ffe8f4cc);
+ border-radius:22px;
+ border:1px solid #ffd2e8;
+ box-shadow:0 22px 32px rgba(0,0,0,.18);
  overflow:hidden;
  transform:translateY(20px);
  opacity:0;
@@ -167,39 +98,151 @@ body{
 
 .card img{
  width:100%;
- height:160px;
+ height:170px;
  object-fit:cover;
 }
+
 .card .info{
  padding:12px;
- font-weight:700;
+ font-weight:800;
+ color:#4a2c3a;
 }
 
 .order-btn{
  width:100%;
  border:none;
+ padding:12px;
+ background:#ff7eb6;
+ color:#fff;
+ font-weight:800;
+ cursor:pointer;
+ transition:.25s;
+}
+.order-btn:hover{
+ background:#ff5ca5;
+}
+
+/* ===========================
+ CONTACT FORM POPUP — FROSTED
+===========================*/
+.popup-overlay{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.45);
+ display:none;
+ justify-content:center;
+ align-items:center;
+ z-index:999;
+}
+
+.popup{
+ width:360px;
+ padding:18px;
+ background:linear-gradient(145deg,#ffffffcc,#ffe6f4c5);
+ border-radius:20px;
+ border:1.4px solid #ffc9e6;
+ backdrop-filter:blur(14px);
+ box-shadow:0 22px 40px rgba(0,0,0,.35);
+ animation:pop .35s ease;
+}
+
+@keyframes pop{
+ from{transform:scale(.85);opacity:0;}
+ to{transform:scale(1);opacity:1;}
+}
+
+.popup h3{
+ text-align:center;
+ color:#8c3f60;
+ margin-top:0;
+}
+
+.popup label{
+ font-weight:700;
+ color:#5a3043;
+}
+
+.popup input,
+.popup textarea{
+ width:100%;
+ margin-top:6px;
  padding:10px;
- background:#00e5ff;
+ border-radius:12px;
+ border:1px solid #ffcfe7;
+ background:#fff8fc;
+ outline:none;
+ color:#4a2c3a;
+}
+
+.popup textarea{min-height:80px;}
+
+.popup-buttons button{
+ width:100%;
+ margin-top:10px;
+ padding:12px;
+ border-radius:14px;
+ border:none;
  font-weight:800;
  cursor:pointer;
 }
 
+.wbtn{background:#31d47b;color:#fff;}
+.ebtn{background:#ff7eb6;color:#fff;}
+
 /* ===========================
- PRODUCT MODAL
+ SUCCESS POPUP — PASTEL GLASS
+===========================*/
+.success-box{
+ display:none;
+ width:360px;
+ padding:24px;
+ text-align:center;
+ border-radius:20px;
+ background:linear-gradient(145deg,#ffffffd8,#eafff4d3);
+ border:1.5px solid #b6ffd9;
+ backdrop-filter:blur(16px);
+ box-shadow:0 18px 35px rgba(0,0,0,.35);
+ animation:pop .35s ease;
+}
+
+.tick{
+ font-size:48px;
+ color:#23c46a;
+}
+
+.success-box h2{
+ margin:8px 0;
+ color:#3b6b4a;
+}
+
+.success-box button{
+ margin-top:12px;
+ padding:10px 20px;
+ border-radius:14px;
+ border:none;
+ background:#ff7eb6;
+ color:#fff;
+ font-weight:700;
+ cursor:pointer;
+}
+
+/* ===========================
+ PRODUCT MODAL — GLASS CARD
 ===========================*/
 .modal{
  position:fixed;
  inset:0;
- background:rgba(0,0,0,.65);
+ background:rgba(0,0,0,.45);
  display:none;
  justify-content:center;
  align-items:center;
 }
+
 .modal-content{
  width:340px;
- border-radius:16px;
- background:#0c2a3b;
- border:1px solid #12ffd8;
+ border-radius:18px;
+ background:linear-gradient(145deg,#ffffffdd,#fff1f8c9);
+ border:1px solid #ffcfe7;
  padding:16px;
 }
 
@@ -210,9 +253,10 @@ body{
 
 <div class="header">
  <div>✉ BakeTimeStories@gmail.com</div>
+
  <div class="actions">
    <button onclick="openContact()">CONTACT</button>
-   <button onclick="alert('Login popup will be added next build')">LOGIN</button>
+   <button onclick="alert('Login popup will be added')">LOGIN</button>
  </div>
 </div>
 
@@ -225,38 +269,36 @@ body{
 </div>
 
 <!-- PRODUCT GRID -->
-<!-- BAKERY CARD GRID -->
 <div class="grid" id="productGrid">
 
-  <!-- CAKES -->
-  <div class="card cakes">
-    <img src="https://images.pexels.com/photos/35389962/pexels-photo-35389962.jpeg">
-    <div class="info">Chocolate Truffle Cake</div>
-    <button class="order-btn" onclick="openProduct('Chocolate Truffle Cake')">View</button>
-  </div>
+ <!-- CAKES -->
+ <div class="card cakes">
+  <img src="https://images.pexels.com/photos/35389962/pexels-photo-35389962.jpeg">
+  <div class="info">Chocolate Truffle Cake</div>
+  <button class="order-btn" onclick="openProduct('Chocolate Truffle Cake')">View</button>
+ </div>
 
-  <div class="card cakes">
-    <img src="https://images.pexels.com/photos/5702989/pexels-photo-5702989.jpeg">
-    <div class="info">Eggless Cupcakes</div>
-    <button class="order-btn" onclick="openProduct('Eggless Cupcakes')">View</button>
-  </div>
+ <div class="card cakes">
+  <img src="https://images.pexels.com/photos/5702989/pexels-photo-5702989.jpeg">
+  <div class="info">Eggless Cupcakes</div>
+  <button class="order-btn" onclick="openProduct('Eggless Cupcakes')">View</button>
+ </div>
 
-  <!-- BROWNIES -->
-  <div class="card brownies">
-    <img src="https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg">
-    <div class="info">Brownies & Tarts</div>
-    <button class="order-btn" onclick="openProduct('Brownies & Tarts')">View</button>
-  </div>
+ <!-- BROWNIES -->
+ <div class="card brownies">
+  <img src="https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg">
+  <div class="info">Brownies & Tarts</div>
+  <button class="order-btn" onclick="openProduct('Brownies & Tarts')">View</button>
+ </div>
 
-  <!-- HAMPERS -->
-  <div class="card hampers">
-    <img src="https://images.pexels.com/photos/30727980/pexels-photo-30727980.jpeg">
-    <div class="info">Gift Hampers</div>
-    <button class="order-btn" onclick="openProduct('Gift Hampers')">View</button>
-  </div>
+ <!-- HAMPERS -->
+ <div class="card hampers">
+  <img src="https://images.pexels.com/photos/30727980/pexels-photo-30727980.jpeg">
+  <div class="info">Gift Hampers</div>
+  <button class="order-btn" onclick="openProduct('Gift Hampers')">View</button>
+ </div>
 
 </div>
-
 
 <!-- CONTACT POPUP -->
 <div class="popup-overlay" id="contactPopup">
@@ -285,7 +327,7 @@ body{
 
  </div>
 
- <!-- SUCCESS POPUP -->
+ <!-- SUCCESS -->
  <div class="success-box" id="successBox">
   <div class="tick">✔</div>
 
@@ -298,16 +340,14 @@ body{
 
 </div>
 
-<!-- PRODUCT PREVIEW MODAL -->
+<!-- PRODUCT MODAL -->
 <div class="modal" id="productModal">
- <div class="modal-content" id="modalContent">
-   Loading...
- </div>
+ <div class="modal-content" id="modalContent">Loading...</div>
 </div>
 
 <script>
 
-/* Scroll Fade Animation */
+/* Scroll-in animation */
 document.querySelectorAll(".card").forEach((c,i)=>{
  setTimeout(()=>c.classList.add("show"),i*120);
 });
@@ -336,29 +376,26 @@ function openProduct(name){
  document.getElementById("productModal").style.display="flex";
  document.getElementById("modalContent").innerHTML =
  `<h3>${name}</h3>
- <p>Premium handcrafted bakery item.</p>
+ <p>Freshly baked, handcrafted & eggless.</p>
  <button onclick="openContact()">Order Now</button>`;
 }
 
 /* WhatsApp Submit */
 function submitWhatsApp(){
-
  let n = name.value;
  let m = mobile.value;
  let r = req.value;
 
  window.open(
-  `https://wa.me/919000000000?text=
+ `https://wa.me/919000000000?text=
 Name: ${n}%0AMobile:${m}%0ARequirement:${r}`,
  "_blank");
 
  showSuccess();
 }
 
-/* Save To Google Sheets */
+/* Google Sheets Hook */
 function saveToSheet(){
-
- // Replace with your Apps Script URL
  const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
 
  fetch(scriptURL,{
@@ -373,7 +410,7 @@ function saveToSheet(){
  showSuccess();
 }
 
-/* Show Success Popup */
+/* Success Popup */
 function showSuccess(){
  document.getElementById("contactBox").style.display="none";
  document.getElementById("successBox").style.display="block";
