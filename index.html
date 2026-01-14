@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>BakeMyHome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+
+<style>
+body{
+  margin:0;
+  background:#0b0f1a;
+  color:white;
+  font-family:Poppins,sans-serif;
+}
+.hero{
+  text-align:center;
+  padding-top:80px;
+}
+.hero-text h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+.hero-text p{
+  opacity:.7;
+  line-height:1.5;
+}
+.carousel{
+  position:relative;
+  height:450px;
+  margin-top:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.card{
+  position:absolute;
+  cursor:pointer;
+}
+.card img{
+  width:340px;
+  border-radius:30px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
+}
+</style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script>
+const { motion, AnimatePresence } = window["framer-motion"];
+const e = React.createElement;
+
+const baseImages = [
+ {src:"image2.png",title:"Pink Donut Dream",desc:"Soft, golden dough dipped in\nsweet strawberry magic."},
+ {src:"image1.png",title:"Midnight Cocoa Mousse",desc:"Silken chocolate folded into a\ncloud-light, indulgent finish."},
+ {src:"image3.png",title:"Morning Honey Stack",desc:"Fluffy pancakes layered with\na gentle kiss of golden honey."},
+ {src:"image5.png",title:"Molten Vanilla Brownie",desc:"Deep cocoa richness softened by\nsilky vanilla sweetness."},
+ {src:"image4.png",title:"Golden Orchard Pie",desc:"Spiced apples resting beneath a\ngolden, flaky crown."}
+];
+
+const images = [...baseImages, ...baseImages, ...baseImages];
+const GAP = 700;
+
+function Hero(){
+ const [index,setIndex]=React.useState(0);
+ const [direction,setDirection]=React.useState(1);
+
+ const next=()=>{setDirection(1);setIndex(i=>(i+1)%images.length);}
+ const prev=()=>{setDirection(-1);setIndex(i=>(i-1+images.length)%images.length);}
+
+ const visible=[
+  images[index%images.length],
+  images[(index+1)%images.length],
+  images[(index+2)%images.length]
+ ];
+ const center=images[(index+1)%images.length];
+
+ return e("div",{className:"hero"},
+   e(AnimatePresence,{mode:"wait"},
+     e(motion.div,{
+       key:center.title,
+       className:"hero-text",
+       initial:{y:-40,opacity:0},
+       animate:{y:0,opacity:1},
+       exit:{y:40,opacity:0},
+       transition:{duration:.7}
+     },
+       e("h1",null,center.title),
+       e("p",null,center.desc.split("\n").map((l,i)=>e("span",{key:i},l,e("br"))))
+     )
+   ),
+
+   e("div",{className:"carousel"},
+     e(AnimatePresence,{initial:false},
+       visible.map((item,i)=>
+         e(motion.div,{
+           key:item.src,
+           className:"card",
+           onClick:i===2?next:i===0?prev:null,
+           initial:{x:i===2?GAP*2:(i-1)*GAP,opacity:0,scale:.7,rotate:180},
+           animate:{x:(i-1)*GAP,opacity:1,scale:i===1?1.15:.7,rotate:i===1?0:180},
+           exit:{x:-direction*GAP*2,opacity:0,scale:.7,rotate:180},
+           transition:{x:{duration:1.2},scale:{duration:1.1}}
+         },
+           e("img",{src:item.src})
+         )
+       )
+     )
+   )
+ );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(e(Hero));
+</script>
+</body>
+</html>
